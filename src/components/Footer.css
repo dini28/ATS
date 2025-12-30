@@ -13,10 +13,16 @@
     margin-bottom: 60px;
 }
 
-.footer-brand {
+.footer-logo {
     font-family: var(--font-primary);
-    font-size: 1.25rem;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
+}
+
+.logo-span {
+    color: var(--color-primary-text);
+    font-family: var(--font-secondary);
 }
 
 .footer-links-group {

@@ -64,7 +64,6 @@
 
 .feature-description {
     font-family: var(--font-secondary);
-    /* Anta */
     font-size: 0.95rem;
     line-height: 1.7;
     color: var(--color-secondary-text);

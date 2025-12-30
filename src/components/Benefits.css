@@ -33,14 +33,14 @@
 
 .benefit-item:first-child {
     border-top: 2px solid var(--color-text);
-    /* Thicker line for the first item */
 }
 
 /* Number Styling - Using Goldman for a tech/robotic look */
 .benefit-number {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: 0.02em;
     margin-right: 60px;
     color: var(--color-text);
     flex-shrink: 0;
@@ -67,11 +67,6 @@
 .benefit-item:hover {
     padding-left: 20px;
     /* Subtle slide effect */
-}
-
-.benefit-item:hover .benefit-number {
-    color: #3b82f6;
-    /* Subtle brand color hint on hover */
 }
 
 /* Responsive Handling */

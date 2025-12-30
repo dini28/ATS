@@ -9,8 +9,8 @@ const Footer = () => {
                 <div className="footer-content">
                     {/* Brand Section */}
                     <div className="footer-brand-section">
-                        <div className="footer-brand">
-                            ATS <span style={{ color: '#888' }}>Analyzer</span>
+                        <div className="footer-logo">
+                            ATS <span className='logo-span'>Analyzer</span>
                         </div>
                         <p style={{ marginTop: '16px', fontSize: '0.9rem', color: '#888', maxWidth: '300px' }}>
                             Precision-engineered resume analysis to help you beat the algorithms.
