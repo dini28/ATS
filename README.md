@@ -29,8 +29,8 @@ ATS Analyzer provides instant, AI-powered feedback on resumes. It simulates real
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/dini28/ATS.git
-    cd ATS
+    git clone https://github.com/dini28/ats.git
+    cd ats
     ```
 
 2.  **Install dependencies:**
