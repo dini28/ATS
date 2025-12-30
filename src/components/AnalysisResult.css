@@ -1,0 +1,218 @@
+/* Container for the loading state */
+.analysis-loader-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loader-card {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+}
+
+/* The "Scanning" effect line */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+.tech-icon {
+    font-family: var(--font-primary);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--color-secondary-text);
+    margin-bottom: 12px;
+}
+
+.progress-container {
+    margin-top: 32px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    font-family: var(--font-secondary);
+}
+
+/* --- Dashboard Style --- */
+.result-dashboard {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 24px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-hover);
+    padding: 40px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.file-badge {
+    background: #f4f4f5;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.result-main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Score Visuals */
+.score-visual {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.score-number {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 0.6em;
+    fill: var(--color-text);
+    text-anchor: middle;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 2;
+}
+
+.circle-main {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.score-info {
+    text-align: center;
+}
+
+.score-info .label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary-text);
+}
+
+.status-text.success {
+    color: #16a34a;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+}
+
+/* Checklist Styling */
+.feedback-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.group-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary-text);
+    margin-bottom: 8px;
+}
+
+.check-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+.check-item.pass {
+    border-left: 4px solid #22c55e;
+}
+
+.check-item.fail {
+    border-left: 4px solid #facc15;
+}
+
+.check-icon {
+    font-weight: 700;
+}
+
+.check-text strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.check-text p {
+    font-size: 0.85rem;
+    color: var(--color-secondary-text);
+}
+
+.result-footer {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .result-main {
+        grid-template-columns: 1fr;
+    }
+
+    .score-visual {
+        margin: 0 auto;
+    }
+}

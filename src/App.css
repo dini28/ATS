@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Badeen+Display&display=swap');
+
+:root {
+    --color-bg: #ffffff;
+    --color-text: #050505;
+    --color-secondary-text: #525252;
+    --color-border: #e5e5e5;
+    --color-accent: #000000;
+    --color-footer-bg: #0a0a0a;
+    --color-footer-text: #ffffff;
+    --font-primary: 'Badeen Display', sans-serif;
+    --font-secondary: "Anta", sans-serif;
+    --max-width: 1200px;
+    --radius-md: 8px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography Utility Classes */
+.heading-xl {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+.heading-lg {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.heading-md {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.text-lead {
+    font-size: 1.35rem;
+    color: var(--color-secondary-text);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+/* Animation Utilities */
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,287 @@
+.hero-section {
+    /* Changed to align items center for vertical centering on desktop */
+    min-height: 90vh;
+    /* Slightly taller */
+    display: flex;
+    align-items: center;
+    padding: 120px 0 60px;
+    /* Increased top padding to clear header */
+    background: radial-gradient(circle at 15% 50%, #ffffff 0%, #f4f4f5 100%);
+    /* Subtle shift in gradient center */
+    overflow: hidden;
+    /* prevents scrollbar during animations */
+}
+
+/* === New 2-Column Layout === */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Split into two equal columns */
+    align-items: center;
+    /* Vertically center content with the upload box */
+    gap: 64px;
+    /* Spacing between columns */
+    text-align: left;
+    /* Reset text alignment */
+}
+
+/* Left Column Content */
+.hero-content-left {
+    max-width: 600px;
+    /* Ensure text doesn't get too wide */
+}
+
+/* Right Column Upload Card Wrapper */
+.hero-upload-right {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 24px;
+    /* Professional soft shadow for "floating" effect */
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12), 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+}
+
+
+/* === Typography Adjustments === */
+.hero-title {
+    margin-bottom: 24px;
+}
+
+.text-highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.text-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: -2%;
+    width: 104%;
+    height: 30%;
+    background-color: rgba(255, 220, 0, 0.3);
+    /* Changed to a subtle yellow highlight look */
+    z-index: -1;
+    transform: rotate(-2deg);
+    border-radius: 4px;
+}
+
+.hero-subtitle {
+    /* Removed margin: 0 auto */
+    max-width: 540px;
+    margin-bottom: 0;
+    color: var(--color-secondary-text);
+    font-size: 1.25rem;
+    /* Slightly adjusted size */
+}
+
+
+/* === Upload Zone Styles Refined === */
+.upload-zone {
+    width: 100%;
+    /* Removed max-width here as the parent container handles it */
+    min-height: 220px;
+    border: 2px dashed #d4d4d8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+    /* Slightly darker inside the white card */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.upload-zone:hover {
+    border-color: #a1a1aa;
+    background-color: #f4f4f5;
+}
+
+.upload-zone-active {
+    border-color: var(--color-accent);
+    background-color: rgba(0, 0, 0, 0.02);
+    transform: scale(0.98);
+    /* Subtle shrink effect on drag over */
+}
+
+/* New state for when file is present */
+.upload-zone-filled {
+    border-style: solid;
+    border-color: rgba(76, 175, 80, 0.3);
+    background-color: rgba(76, 175, 80, 0.02);
+    cursor: default;
+    /* Change cursor since input is disabled */
+}
+
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* Fix: when file is selected, input is disabled, so pointer events should pass through */
+.file-input[disabled] {
+    pointer-events: none;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    /* Important: allow clicks to pass through to input */
+    pointer-events: none;
+    width: 100%;
+    padding: 20px;
+}
+
+.upload-icon {
+    width: 56px;
+    height: 56px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.upload-text-main {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 1.1rem;
+}
+
+.upload-text-sub {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+}
+
+
+/* === File Selected State Refined === */
+.file-selected {
+    display: flex;
+    flex-direction: row;
+    /* Changed to row for professional look */
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    text-align: left;
+}
+
+.icon-doc {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.file-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    /* For text truncation */
+}
+
+.filename {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+}
+
+/* Utility for truncating long filenames */
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.file-status {
+    font-size: 0.85rem;
+    color: #15803d;
+    /* Darker green */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.file-status::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+}
+
+
+/* === Analyze Button Container Refined === */
+.btn-analyze-container {
+    margin-top: 24px;
+    /* Reset absolute positioning */
+    position: static;
+    bottom: auto;
+    width: 100%;
+    transform: none;
+}
+
+/* Helper class if your Button component supports className prop */
+.btn-full-width {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+    /* Beefier button */
+    font-size: 1rem;
+}
+
+
+/* === Responsive Layout === */
+@media (max-width: 968px) {
+    .hero-section {
+        padding-top: 100px;
+        align-items: flex-start;
+        /* Align to top on mobile */
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        /* Stack on smaller screens */
+        gap: 48px;
+        text-align: center;
+        /* Revert to centered text */
+    }
+
+    .hero-content-left {
+        margin: 0 auto;
+        /* Center the text block */
+    }
+
+    .hero-subtitle {
+        margin: 0 auto;
+        /* Center subtitle */
+    }
+
+    .hero-upload-right {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    /* Adjust highlight position for centered text */
+    .text-highlight::after {
+        left: -5%;
+        width: 110%;
+    }
+}
