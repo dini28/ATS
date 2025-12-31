@@ -1,30 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Background -->
-  <rect width="64" height="64" rx="10" fill="#000"/>
-
-  <!-- Center group -->
-  <g transform="translate(32 32)">
-
-    <!-- A -->
-    <rect x="-24" y="-8" width="6" height="24" fill="#fff"/>
-    <rect x="-16" y="-8" width="6" height="24" fill="#fff"/>
-    <rect x="-24" y="-8" width="14" height="6" fill="#fff"/>
-
-    <!-- T -->
-    <rect x="-6" y="-8" width="18" height="6" fill="#fff"/>
-    <rect x="1" y="-8" width="6" height="24" fill="#fff"/>
-
-    <!-- S (completed) -->
-    <!-- Top bar -->
-    <rect x="18" y="-8" width="14" height="6" fill="#fff"/>
-    <!-- Middle bar -->
-    <rect x="18" y="2" width="14" height="6" fill="#fff"/>
-    <!-- Bottom bar -->
-    <rect x="18" y="12" width="14" height="6" fill="#fff"/>
-    <!-- Left connector -->
-    <rect x="18" y="-2" width="6" height="6" fill="#fff"/>
-    <!-- Right connector -->
-    <rect x="26" y="8" width="6" height="6" fill="#fff"/>
-
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" fill="none">
+    <path 
+        d="M15.883 17.19L12.5 23l5.152-3.498-1.769-2.312zM16 6L6 23h5.455l7.272-12.526L16 6zm0 9.842L21.455 23H26l-6.364-9.842L16 15.842z" 
+        fill="#fff" 
+    />
 </svg>
